@@ -11,6 +11,7 @@
 /interface l2tp-client enable VPN1;
 
 :log info "*** Interface l2tp-client modified ***";
+:put "$vpnhost"
 
 } on-error={
  /log error "********** VPNSCRIPT finished with error *********";
