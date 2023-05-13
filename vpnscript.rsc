@@ -10,7 +10,7 @@
 /interface l2tp-client set [find Name=VPN1] connect-to=$vpnhost;
 /interface l2tp-client enable VPN1;
 
-:log info "*** Interface l2tp-client modified ***";
+:log info "Interface l2tp-client modified. New VPN endpoint: $vpnhost";
 :put "$vpnhost"
 
 } on-error={

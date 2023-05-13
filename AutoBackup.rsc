@@ -32,7 +32,6 @@
   :delay 2s
  
   #email copies
-  :log info "Emailing backups"
   :local time [/system clock get time]
   /tool e-mail send to=$"toemail" subject="[$sysname Config Backup] $time $date" file=($"backupfilename",$"textfilename") body="Uptime: $uptime"
 
@@ -42,6 +41,9 @@
   # delete copies
   /file remove $textfilename
   /file remove $backupfilename
+
+  :log info "Backups created."
+  :put "Backups created."
 
 } on-error={
     /log error "***** AUTOBACKUP script finished with error ******"
